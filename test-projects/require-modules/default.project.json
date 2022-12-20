@@ -1,0 +1,6 @@
+{
+  "name": "require-modules",
+  "tree": {
+    "$path": "src/"
+  }
+}
