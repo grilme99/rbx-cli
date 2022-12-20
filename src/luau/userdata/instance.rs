@@ -65,8 +65,7 @@ impl UserData for InnerInstance {
             if let Some(child_node) = sourcemap_ref.find_first_child(&child_name) {
                 // TODO: How can we return the instance without constructing a whole new struct and allocating more memory?
                 let parent = Rc::new(RefCell::new(instance.clone()));
-                let child_instance =
-                    Rc::new(RefCell::new(InnerInstance::new(child_node, Some(parent))));
+                let child_instance = InnerInstance::new(child_node, Some(parent));
 
                 return Ok(Some(child_instance));
             } else {
